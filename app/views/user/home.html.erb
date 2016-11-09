@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>homepage</title>
-</head>
-<body>
-	<h1>Home Page</h1>
-	<p>This is the page routed to the home function by the controller after login. Without login, basic sign up/login page shown, as a result of being overridden by the application controller.</p>
+<p>
+   <strong>Name:</strong>
+   <%= @user.name %>
+</p>
 
-</body>
-</html>
+<p>
+   <strong>user_mailID:</strong>
+   <%= @user.email %>
+</p>
+
+<p>
+   <strong>Biodata:</strong>
+   <%= @user.bio %>
+</p>
