@@ -1,4 +1,4 @@
-<p>
+<!---<p>
    <strong>Name:</strong>
    <%= @user.name %>
 </p>
@@ -11,4 +11,46 @@
 <p>
    <strong>Biodata:</strong>
    <%= @user.bio %>
-</p>
+</p> 
+
+<div class='main'>
+	<div class="col-md-10">
+			<h3>Here is a list of all our IPs</h3>
+	</div>
+	</div>
+-->
+ <body>
+  <div class='nav'>
+    <ul class="pull-left">
+      <li><a href="#">About</a></li>
+    </ul>
+    <ul class="pull-right">
+      <li>  <%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
+    </ul>
+  </div>
+  
+  <div class='main'>
+  <div class="col-md-10">
+    <h2>iPortal</h2>
+    <h3>Here is a list of all our IPs</h3>
+  </div>
+  </div>
+  
+  <div class='side'>
+  <div class="col-md-2">
+    <img src="/home/tanya/databaselab/iPortal/iiitbLogo.jpeg">
+    <ul>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">My IPs</a></li>
+        <li><a href="#">Earnings</a></li>
+        <li><a href="#">Upload an IP</a></li>
+    </ul>
+  </div>
+  </div> 
+
+  <div class="footer">
+    <p>For any additional information or enquiry, contact us at <a href="www.gmail.com">iPortal@gmail.com</a>, or call <a href="#">0987654321</a></p>
+  </div>
+ </body>
+<% else %>
+<body>

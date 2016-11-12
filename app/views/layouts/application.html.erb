@@ -5,21 +5,23 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
 </head>
-<body>
 
 <%= yield %>
 
 <!--view for adding link to signout and login -->
-<% if user_signed_in? %>
+<!--<% if user_signed_in? %>
   <li>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
-<% else %>
+  </li>-->
+<!--<% else %>
+<body>
   <li>
   <%= link_to('Login', new_user_session_path)  %>  
-  </li>
+  </li>-->
+</body>
 <% end %>
 
-</body>
+
 </html>
