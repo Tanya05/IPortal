@@ -11,33 +11,26 @@
   
   <div class='main'>
   <div class="col-md-10">
-    <%= form_for :user, url: user_editprofile_path(@user), method: :patch do |f| %>
-
-      <% if @user.errors.any? %>
-        <div id="error_explanation">
-          <h2>
-            <%= pluralize(@user.errors.count, "error") %> prohibited
-            this user from being saved:
-          </h2>
-          <ul>
-            <% @user.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-     
     <div class="field">
-        <%= f.label :biodata %><br/>
-        <%= f.text_area :bio, cols: "60", rows: "10"%>
+      <strong>Name:</strong>
+      <%= @user.name %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "Update"%>
+    <div class="field">
+       <strong>user_mailID:</strong>
+       <%= @user.email %>
     </div>
-    <%end%>
-  </div>
-  </div>
+
+    <div class="field">
+       <strong>Biodata:</strong></br>
+       <%= @user.bio %>
+    </div> 
+    <div class="field">
+      <%= link_to "Edit Profile", user_editprofile_path(@user), style: "color: #428bca" %>
+    </div>
+    </div>
+    </div>
+
   
   <div class='side'>
   <div class="col-md-2">

@@ -61,7 +61,9 @@
   <div class="col-md-2">
     <%= image_tag("iiitbLogo.jpeg", :alt => "iiitbLogo", height: '150', width: '232') %>
     <ul>
-        <li><a href="#">Profile</a></li>
+        <li><a>
+        <%= link_to "Profile", user_profile_path(@user) %>
+        </a></li>
         <li><a href="#">My IPs</a></li>
         <li><a href="#">Earnings</a></li>
         <li><a href="#">Upload an IP</a></li>
