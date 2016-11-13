@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   get 'user/editprofile' => 'user#edit'
   get 'user/profile' => 'user#profile'
+
+  get 'ip/myIps' => 'ip#view'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   patch 'user/editprofile.:id' => 'user#update'

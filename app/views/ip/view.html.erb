@@ -1,27 +1,4 @@
-<!---<p>
-   <strong>Name:</strong>
-   <%= @user.name %>
-</p>
-
-<p>
-   <strong>user_mailID:</strong>
-   <%= @user.email %>
-</p>
-
-<p>
-   <strong>Biodata:</strong>
-   <%= @user.bio %>
-<<<<<<< Updated upstream
-</p> 
-
-<div class='main'>
-	<div class="col-md-10">
-			<h3>Here is a list of all our IPs</h3>
-	</div>
-	</div>
-	<%=link_to 'Edit Profile', user_editprofile_path(@user)%>
--->
- <body>
+<body>
   <div class='nav'>
     <ul class="pull-left">
       <li><a href="#">About</a></li>
@@ -34,10 +11,21 @@
   
   <div class='main'>
   <div class="col-md-10">
-    <h2>iPortal</h2>
-    <h3>Here is a list of all our IPs</h3>
+  	<table style="width:100%">
+  		<tr>
+    		<th>Title</th>
+    		<th>Description</th> 
+  		</tr>
+  		<tr>
+    		<% @data.each do |data| %>
+			<th><%= data.title %></th>
+			<th><%= data.description %></th>
+		</tr>
+		<%end%>
+	</table>
   </div>
   </div>
+
   
   <div class='side'>
   <div class="col-md-2">
@@ -46,10 +34,7 @@
         <li><a>
         <%= link_to "Profile", user_profile_path(@user) %>
         </a></li>
-        <li><a>
-        <%= link_to "My Ips", ip_myIps_path(@user) %>
-        </a></li>
-        <!--<li><a href="#">My IPs</a></li>-->
+        <li><a href="#">My IPs</a></li>
         <li><a href="#">Earnings</a></li>
         <li><a href="#">Upload an IP</a></li>
     </ul>

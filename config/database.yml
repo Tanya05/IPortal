@@ -9,7 +9,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: tanya1805
+  password: pnair123
   host: 127.0.0.1
 
 development:
