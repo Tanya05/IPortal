@@ -61,11 +61,6 @@
 	padding-bottom: 10px;
 	}
 
-.side img
-	{
-	padding: 20px;
-	}
-
 .side ul
 	{
 	padding-top: 10px;
@@ -97,6 +92,17 @@
 	color: #000000;
 	}
 
-a:hover {
-    color: black;
-}
+.side img
+	{
+	padding: 20px;
+	}
+
+a
+	{
+	text-decoration: none;
+	}
+
+a:hover
+	{
+	color:black;
+	}
