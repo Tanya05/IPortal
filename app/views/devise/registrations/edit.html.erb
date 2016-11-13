@@ -1,49 +1,80 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email, autofocus: true, readonly: true %>
+<body>
+  <div class='nav'>
+    <ul class="pull-left">
+      <li><a href="#">About</a></li>
+    </ul>
+    <ul class="pull-right">
+      <li>  <%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
+    
+    </ul>
   </div>
+  
+  <div class='main'>
+  <div class="col-md-10">
+          <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.text_field :email, autofocus: true, readonly: true %>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+          <% if @minimum_password_length %>
+            <br />
+            <em><%= @minimum_password_length %> characters minimum</em>
+          <% end %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <%= f.password_field :current_password, autocomplete: "off" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Update" %>
+        </div>
+      <% end %>
+
+      <h3>Cancel my account</h3>
+
+      <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+      <%= link_to "Back", :back %>
+
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+  
+  <div class='side'>
+  <div class="col-md-2">
+    <%= image_tag("iiitbLogo.jpeg", :alt => "iiitbLogo", height: '150', width: '232') %>
+    <ul>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">My IPs</a></li>
+        <li><a href="#">Earnings</a></li>
+        <li><a href="#">Upload an IP</a></li>
+    </ul>
   </div>
+  </div> 
 
- <div class="field">
-    <%= f.label :biodata %><br/>
-    <%= f.text_area :bio, autocomplete: "off"%>
+  <div class="footer">
+    <p>For any additional information or enquiry, contact us at <a href="www.gmail.com">iPortal@gmail.com</a>, or call <a href="#">0987654321</a></p>
   </div>
+ </body>
+<% else %>
+<body>
 
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>

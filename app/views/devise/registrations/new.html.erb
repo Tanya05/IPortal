@@ -1,4 +1,17 @@
-<h2>Sign up</h2>
+<body>
+  <div class='nav'>
+    <ul class="pull-left">
+      <li><a href="#">About</a></li>
+    </ul>
+    <ul class="pull-right">
+      <li>  <%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
+    
+    </ul>
+  </div>
+  
+  <div class='main'>
+  <div class="col-md-10">
+         <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -35,3 +48,30 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+
+  </div>
+  </div>
+  
+  <div class='side'>
+  <div class="col-md-2">
+    <%= image_tag("iiitbLogo.jpeg", :alt => "iiitbLogo", height: '150', width: '232') %>
+    <ul>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">My IPs</a></li>
+        <li><a href="#">Earnings</a></li>
+        <li><a href="#">Upload an IP</a></li>
+    </ul>
+  </div>
+  </div> 
+
+  <div class="footer">
+    <p>For any additional information or enquiry, contact us at <a href="www.gmail.com">iPortal@gmail.com</a>, or call <a href="#">0987654321</a></p>
+  </div>
+ </body>
+<% else %>
+<body>
+
+
+
+
+
