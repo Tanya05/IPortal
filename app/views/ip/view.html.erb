@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "ip.css" %>
+
 <body>
   <div class='nav'>
     <ul class="pull-left">
@@ -11,6 +13,7 @@
   
   <div class='main'>
   <div class="col-md-10">
+  <h2>iPortal</h2>
   	<table style="width:100%">
   		<tr>
     		<th>Title</th>
@@ -18,8 +21,8 @@
   		</tr>
   		<tr>
     		<% @data.each do |data| %>
-			<th><%= data.title %></th>
-			<th><%= data.description %></th>
+			<td><%= data.title %></td>
+			<td><%= data.description %></td>
 		</tr>
 		<%end%>
 	</table>

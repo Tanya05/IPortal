@@ -30,6 +30,7 @@
 .main h3
 	{
 	font-size:30px;
+	padding-bottom: 30px;
 	}
 
 .main h2
@@ -100,3 +101,29 @@
 a:hover {
     color: black;
 }
+
+.main table
+	{
+	align: center;
+	padding-top: 50px;
+	border: 1px solid #191970;
+	border-spacing: 5px;
+	}
+
+.main table tr th
+	{
+	font-size: 30px;
+	text-align: center;
+	border: 1px solid #191970;
+	padding: 15px;
+	font-weight: bold;
+	text-decoration: underline;
+	}
+
+.main table tr td
+	{
+	text-align: left;
+	font-size: 20px;
+	border: 1px solid #191970;
+	padding: 10px;
+	}

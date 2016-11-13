@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109133106) do
+ActiveRecord::Schema.define(version: 20161113111100) do
 
   create_table "contract_details", force: :cascade do |t|
     t.datetime "created_at",             null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20161109133106) do
     t.string   "title",           limit: 255,   default: "", null: false
     t.text     "description",     limit: 65535
     t.text     "owners",          limit: 65535
-    t.text     "type",            limit: 65535,              null: false
+    t.text     "Type",            limit: 65535,              null: false
     t.boolean  "approval_status"
   end
 
