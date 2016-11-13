@@ -1,25 +1,59 @@
-<%= form_for :user, url: user_editprofile_path(@user), method: :patch do |f| %>
+<body>
+  <div class='nav'>
+    <ul class="pull-left">
+      <li><a href="#">About</a></li>
+    </ul>
+    <ul class="pull-right">
+      <li>  <%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
+    
+    </ul>
+  </div>
+  
+  <div class='main'>
+  <div class="col-md-10">
+    <%= form_for :user, url: user_editprofile_path(@user), method: :patch do |f| %>
 
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@user.errors.count, "error") %> prohibited
-        this user from being saved:
-      </h2>
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@user.errors.count, "error") %> prohibited
+            this user from being saved:
+          </h2>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+     
+    <div class="field">
+        <%= f.label :biodata %><br/>
+        <%= f.text_area :bio, cols: "60", rows: "10"%>
     </div>
-  <% end %>
- 
-<div class="field">
-    <%= f.label :biodata %><br/>
-    <%= f.text_area :bio%>
-</div>
 
-<p>
-	<%= f.submit "Update"%>
-</p>
-<%end%>
+    <div class="actions">
+      <%= f.submit "Update"%>
+    </div>
+    <%end%>
+  </div>
+  </div>
+  
+  <div class='side'>
+  <div class="col-md-2">
+    <img src="/home/tanya/databaselab/iPortal/iiitbLogo.jpeg">
+    <ul>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">My IPs</a></li>
+        <li><a href="#">Earnings</a></li>
+        <li><a href="#">Upload an IP</a></li>
+    </ul>
+  </div>
+  </div> 
+
+  <div class="footer">
+    <p>For any additional information or enquiry, contact us at <a href="www.gmail.com">iPortal@gmail.com</a>, or call <a href="#">0987654321</a></p>
+  </div>
+ </body>
+<% else %>
+<body>
