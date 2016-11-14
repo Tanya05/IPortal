@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   get 'user/editprofile' => 'user#edit'
   get 'user/profile' => 'user#profile'
 
-  get 'ip/myIps' => 'ip#view'
+  get 'ip/myIps' => 'ip#my_ips'
+  get 'about' => 'user#about'
+  get 'user/earnings' => 'user#earnings'
+  get 'ip/upload_ip' => 'ip#upload_ip'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   patch 'user/editprofile.:id' => 'user#update'

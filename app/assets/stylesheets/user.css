@@ -106,3 +106,29 @@ a:hover
 	{
 	color:black;
 	}
+
+.main table
+	{
+	align: center;
+	padding-top: 50px;
+	border: 1px solid #191970;
+	border-spacing: 5px;
+	}
+
+.main table tr th
+	{
+	font-size: 25px;
+	text-align: center;
+	border: 1px solid #191970;
+	padding: 10px;
+	font-weight: bold;
+	text-decoration: underline;
+	}
+
+.main table tr td
+	{
+	text-align: left;
+	font-size: 20px;
+	border: 1px solid #191970;
+	padding: 10px;
+	}

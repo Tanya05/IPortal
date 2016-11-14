@@ -1,6 +1,7 @@
 class UserController < ApplicationController
 	def home
 		@user = current_user
+		@data = Ip.all
 	end
 
 	def profile
@@ -18,6 +19,14 @@ class UserController < ApplicationController
 		else
 		    render 'edit'
 		end
+	end
+
+	def about
+		@user = current_user
+	end
+
+	def earnings
+		@user = current_user
 	end
 
 	private
