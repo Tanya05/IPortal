@@ -1,32 +1,18 @@
 <body>
   <div class='nav'>
     <ul class="pull-left">
-      <li><%= link_to "About", about_path(@user) %></li>
+      <li><a href="#">About</a></li>
     </ul>
     <ul class="pull-right">
-      <li>  <%= link_to @user.name, user_profile_path(@user) %> <%= link_to('(Log Out)', destroy_user_session_path, :method => :delete) %></li>
+      <li> <%= link_to @user.name, user_profile_path(@user) %> <%= link_to('(Log Out)', destroy_user_session_path, :method => :delete) %></li>
+  
     </ul>
   </div>
   
   <div class='main'>
   <div class="col-md-10">
     <h2>iPortal</h2>
-    <h3>Here is a list of all our IPs:</h3>
-    <table style="width:100%">
-      <tr>
-        <th>Title</th>
-        <th>Description</th> 
-      </tr>
-      <tr>
-        <% @data.each do |data| %>
-      <td><%= data.title %></td>
-      <td><%= data.description %></td>
-    </tr>
-    <%end%>
-  </table>
-  </div>
-  </div>
-
+    <h3>Here is a list of all our IPs</h3>
   </div>
   </div>
   
@@ -41,8 +27,10 @@
         <%= link_to "My IPs", ip_myIps_path(@user) %>
         </a></li>
         <!--<li><a href="#">My IPs</a></li>-->
-        <li><%= link_to "Earnings", user_earnings_path(@user) %></li>
-        <li><%= link_to "Upload an IP", ip_upload_ip_path(@user) %></li>
+        <li><a href="#">Earnings</a></li>
+        <li><a href="#">Upload an IP</a></li>
+        <li><a><%= link_to "View all users", admin_viewall_path(@user) %></a></li>
+        <li><a href="#">Add User</a></li>
     </ul>
   </div>
   </div> 
