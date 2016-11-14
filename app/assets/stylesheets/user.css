@@ -132,3 +132,9 @@ a:hover
 	border: 1px solid #191970;
 	padding: 10px;
 	}
+
+.field
+	{
+	font-size: 20px;
+	padding: 20px;
+	}
