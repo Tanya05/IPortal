@@ -19,7 +19,6 @@
 .main
 	{
 	float:right;
-	height:790px;
 	width:1000px;
 	color:#191970;
 	padding-top:5px;
@@ -51,7 +50,6 @@
 
 .side
 	{
-	height:790px;
 	width:285px;
 	float:left;
 	color:#fff;
@@ -135,12 +133,11 @@ a:hover
 
 .field
 	{
-	text-
 	font-size: 20px;
-	padding: 20px;
+	padding: 30px;
 	}
 
 .br
 	{
-	padding: 1px;
+	padding: 30px;
 	}
