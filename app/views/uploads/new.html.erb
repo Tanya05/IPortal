@@ -1,6 +1,7 @@
-<%= stylesheet_link_tag "ip.css" %>
+<%= stylesheet_link_tag "uploads.css" %>
 
 <body>
+
   <div class='nav'>
     <ul class="pull-left">
       <li><%= link_to "About", about_path(@user) %></li>
@@ -14,6 +15,34 @@
   <div class='main'>
   <div class="col-md-10">
     <h2>iPortal</h2>
+
+<% if !@upload.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @upload.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+    <div class="field">
+  <%= form_for @upload, url: ip_upload_ip_path, html: { multipart: true } do |f| %>
+      
+      <br><%= f.label :Title %>:</br>
+      <br><%= f.text_field :title %></br>
+
+      <br><%= f.label :Description %>:</br>
+      <br><%= f.text_area :description %></br>
+
+      <br><%= f.label :Type %>:</br>
+      <br><%= f.text_field :Type %></br>
+
+      <br><%= f.label :Attachment %>:</br>
+      <br><%= f.file_field :uploads %></br>
+      <br><%= f.submit "Save", class: "btn btn-primary" %></br>
+  <% end %>
+</div>
 
   </div>
   </div>

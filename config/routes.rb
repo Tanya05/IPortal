@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   devise_for :user, :controllers => { registrations: 'registrations' }
   root 'user#home'
   # The priority is based upon order of creation: first created -> highest priority.
@@ -13,18 +13,22 @@ Rails.application.routes.draw do
   get 'contract/new' => 'contract#new'
   get 'about' => 'user#about'
   get 'user/earnings' => 'user#earnings'
-  get 'ip/upload_ip' => 'ip#upload_ip'
+  get 'ip/upload_ip' => 'uploads#new'
+  post 'ip/upload_ip' => 'uploads#create'
+  get 'admin' => 'admin#home'
+  get 'admin/viewall' => 'admin#viewall'
+  match '/admin/:id' => 'admin#user_destroy', :via => :delete, :as => :admin_user_destroy
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   patch 'user/editprofile.:id' => 'user#update'
   put 'ip/licensing.:id' => 'contract#new'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
   # Example of named route that can be invoked with purchase_url(id: product.id)
   # get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
+  resources :uploads, only: [:index, :new, :create, :destroy]
   resources :ip
   resources :stakeholder
   resources :contract
