@@ -7,4 +7,8 @@ class IpController < ApplicationController
 	def upload_ip
 		@user = current_user
 	end
+
+	def successful_upload
+		@user = current_user
+	end
 end

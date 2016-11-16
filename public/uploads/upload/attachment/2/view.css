@@ -1,0 +1,81 @@
+.nav a
+	{
+	color:#000000;
+	font-size:20px;
+	font-weight:bold;
+	text-decoration:none;
+	}
+
+.nav li
+	{
+	padding:10px;
+	display:inline;
+	}
+
+.main
+	{
+	float:right;
+	height:1000px;
+	width:1000px;
+	color:#fff;
+	background-image:url('http://images.trvl-media.com/hotels/1000000/30000/25000/24912/24912_34_z.jpg');
+	background-size:cover;	
+	padding-top:5px;
+	padding-left:10px;
+	}
+
+.main h1
+	{
+	font-size:70px;
+	}
+
+.main p
+	{
+	font-size:30px;
+	}
+
+.main a
+	{
+	color:#fff;
+	text-decoration:underline;
+	}
+
+.side
+	{
+	height:1000px;
+	width:285px;
+	float:left;
+	color:#fff;
+	background-color:#800000;
+	border: 1px solid #800000;
+	font-size:20px;
+	}
+
+.side a
+	{
+	color:#fff;
+	text-decoration:none;
+	}
+
+.learn
+	{
+	clear:both;
+	color:#000000;
+	background-color:#ffffff;
+	text-align:center;
+	}
+
+.learn h3
+	{
+	text-align:center;
+	}
+
+.footer
+	{
+	text-align:center;
+	font-size:20px;
+	color:#fff;
+	background-color:#800000;
+	clear:both;
+	margin-bottom:0px;
+	}

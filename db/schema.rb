@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114134936) do
+ActiveRecord::Schema.define(version: 20161114182357) do
 
   create_table "contract_details", force: :cascade do |t|
     t.datetime "created_at",             null: false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20161114134936) do
     t.text     "owners",          limit: 65535
     t.text     "Type",            limit: 65535,              null: false
     t.boolean  "approval_status"
+    t.string   "uploads",         limit: 255
   end
 
   create_table "labs", force: :cascade do |t|
@@ -53,6 +54,13 @@ ActiveRecord::Schema.define(version: 20161114134936) do
     t.float    "percentage", limit: 24, default: 0.0
     t.integer  "ip_id",      limit: 4
     t.integer  "user_id",    limit: 4
+  end
+
+  create_table "uploads", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "attachment", limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
