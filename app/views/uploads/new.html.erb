@@ -40,7 +40,7 @@
       <br>
 
       <br><%= f.label :Type %>:
-      <br><%= f.text_field :Type %>
+      <br><%= f.collection_select :Type, Ip::TYPES, :to_s, :to_s%> <!--to_s means to string -->
 
       <br>
 
