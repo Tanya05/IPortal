@@ -7,12 +7,17 @@ Rails.application.routes.draw do
   get 'user/profile' => 'user#profile'
 
   get 'ip/myIps' => 'ip#my_ips'
+  get 'ip/info' => 'ip#ip_info'
+  post 'ip/show' => 'ip#show'
+  get 'ip/licensing' => 'ip#license'
+  get 'contract/new' => 'contract#new'
   get 'about' => 'user#about'
   get 'user/earnings' => 'user#earnings'
   get 'ip/upload_ip' => 'ip#upload_ip'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   patch 'user/editprofile.:id' => 'user#update'
+  put 'ip/licensing.:id' => 'contract#new'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

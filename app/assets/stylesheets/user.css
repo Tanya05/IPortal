@@ -133,6 +133,11 @@ a:hover
 	padding: 10px;
 	}
 
+.main a
+	{
+	color: #191970;
+	}
+
 .field
 	{
 	font-size: 20px;
