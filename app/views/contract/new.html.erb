@@ -10,14 +10,10 @@
   
   <div class='main'>
   <div class="col-md-10">
-    <%= form_for @contract, url: {action: "create"} do |f| %>
+    <%= form_for :contract, url: contract_create_path() do |f| %>
       <%= f.text_field :type %>
       <%= f.submit "Submit proposal" %>
     <% end %>
-
-    <div class="actions">
-      <%= f.submit "Submit"%>
-    </div>
   </div>
   </div>
 

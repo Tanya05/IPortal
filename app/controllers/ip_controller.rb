@@ -25,5 +25,10 @@ class IpController < ApplicationController
 	end
 
 	def license
+
+	end
+	
+	def successful_upload
+		@user = current_user
 	end
 end
