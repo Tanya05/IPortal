@@ -18,6 +18,9 @@
   get 'admin' => 'admin#home'
   get 'admin/viewall' => 'admin#viewall'
   match '/admin/:id' => 'admin#user_destroy', :via => :delete, :as => :admin_user_destroy
+  get 'admin/createuser' => 'admin#createuser'
+  post 'admin/createuser' => 'admin#create'
+  #get 'admin/createuser' => 'devise/registrations#new'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   patch 'user/editprofile.:id' => 'user#update'

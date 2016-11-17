@@ -20,7 +20,7 @@
 
         <div class="field">
           <%= f.label :email %><br />
-          <%= f.text_field :email, autofocus: true, readonly: true %>
+          <%= f.text_area :email, autofocus: true, readonly: true, cols: '40', rows: '1' %>
         </div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
