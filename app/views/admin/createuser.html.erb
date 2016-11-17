@@ -50,10 +50,17 @@
   <div class="col-md-2">
     <%= image_tag("iiitbLogo.jpeg", :alt => "iiitbLogo", height: '150', width: '232') %>
     <ul>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">My IPs</a></li>
-        <li><a href="#">Earnings</a></li>
-        <li><a href="#">Upload an IP</a></li>
+        <li><a>
+        <%= link_to "Profile", user_profile_path(@user) %>
+        </a></li>
+        <li><a>
+        <%= link_to "My IPs", ip_myIps_path(@user) %>
+        </a></li>
+        <!--<li><a href="#">My IPs</a></li>-->
+        <li><%= link_to "Earnings", user_earnings_path(@user) %></li>
+        <li><%= link_to "Upload an IP", ip_upload_ip_path(@user) %></li>
+        <li><a><%= link_to "View all users", admin_viewall_path(@user) %></a></li>
+        <li><a><%= link_to "Add User", admin_createuser_path(@user) %></a></li>
     </ul>
   </div>
   </div> 
