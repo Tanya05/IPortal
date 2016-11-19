@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-	before_filter :is_first_sign_in?	
+	before_filter :is_first_sign_in?, :is_admin?	
 
 	def home
 		@user = current_user
@@ -49,7 +49,14 @@ class UserController < ApplicationController
 	    	unless current_user.sign_in_count != 1
 	      	flash[:error] = "Please Change your password"
 	     	redirect_to edit_user_registration_path
+	    	end
 	    end
-	end
+
+	    def is_admin?
+	    	unless current_user.isAdmin == 1
+	      	flash[:error] = "Welcome Admin"
+	     	redirect_to admin_path
+	    	end
+		end
 	
 end

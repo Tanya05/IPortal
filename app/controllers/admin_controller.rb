@@ -29,7 +29,7 @@ class AdminController < ApplicationController
 	    	flash[:notice] = "You created a new user!"
 	    	flash[:color]= "valid"
 	    else
-	    	flash[:notice] = "Form is invalid"
+	    	flash[:notice] = "Form was invalid, either username or email already exists!"
 	    	flash[:color]= "invalid"
 	    end
 	    redirect_to admin_createuser_path
