@@ -10,6 +10,14 @@ class AdminController < ApplicationController
 		@users = User.all
 	end
 
+  def about
+    @user = current_user
+  end
+
+  def earnings
+    @user = current_user
+  end
+
 	def user_destroy
 		@user = User.find(params[:id])#parameters selected acc to ID
 		@user.destroy#this instance destroyed
@@ -25,6 +33,11 @@ class AdminController < ApplicationController
 
     def create
     	@user = User.create(create_params)
+      if create_params[:isIIITB]=="International Institute of Information Technology, Bangalore"
+        @user.isIIITB=1
+      else
+        @user.isIIITB=0
+      end
     	if @user.save
 	    	flash[:notice] = "You created a new user!"
 	    	flash[:color]= "valid"
@@ -46,7 +59,7 @@ class AdminController < ApplicationController
 
     def create_params
     	defaults = { password: "changethis", password_confirmation: "changethis" }
-    	params.require(:user).permit(:name, :email).merge(defaults)
+    	params.require(:user).permit(:name, :email, :isIIITB).merge(defaults)
     end
   end
 end

@@ -16,6 +16,8 @@
   get 'ip/upload_ip' => 'uploads#new'
   post 'ip/upload_ip' => 'uploads#create'
   get 'admin' => 'admin#home'
+  get 'admin/about' => 'admin#about'
+  get 'admin/earnings' => 'admin#earnings'
   get 'admin/viewall' => 'admin#viewall'
   match '/admin/:id' => 'admin#user_destroy', :via => :delete, :as => :admin_user_destroy
   get 'admin/createuser' => 'admin#createuser'

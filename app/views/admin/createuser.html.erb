@@ -1,7 +1,7 @@
 <body>
   <div class='nav'>
     <ul class="pull-left">
-      <li><a href="#">About</a></li>
+      <li><%= link_to "About", admin_about_path(@user) %></li>
     </ul>
     <ul class="pull-right">
       <li>  <%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
@@ -24,6 +24,12 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
+
+  <div class="field">
+    <%= f.label :Institute %><br />
+    <%= f.select :isIIITB, options_for_select(["International Institute of Information Technology, Bangalore", "Other"]) %><br/>
+  </div>
+  </br>
 
   <!--<div class="field">
     <%= f.label :password %>
@@ -60,7 +66,7 @@
         <%= link_to "My IPs", ip_myIps_path(@user) %>
         </a></li>
         <!--<li><a href="#">My IPs</a></li>-->
-        <li><%= link_to "Earnings", user_earnings_path(@user) %></li>
+        <li><%= link_to "Earnings", admin_earnings_path(@user) %></li>
         <li><%= link_to "Upload an IP", ip_upload_ip_path(@user) %></li>
         <li><a><%= link_to "View all users", admin_viewall_path(@user) %></a></li>
         <li><a><%= link_to "Add User", admin_createuser_path(@user) %></a></li>
