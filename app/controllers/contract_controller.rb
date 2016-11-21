@@ -3,6 +3,11 @@ class ContractController < ApplicationController
 		@user = current_user
 		@contract = Contract.new
 	end
+
+	def create
+		@user = current_user	
+	end
+
 	def update
 		@user = current_user
 		if @user.update(user_params)

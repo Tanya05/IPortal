@@ -1,6 +1,7 @@
 class IpController < ApplicationController
 	def my_ips
 		@user = current_user
+		@id = user[id]
 		@data = Ip.all
 	end
 
@@ -25,5 +26,10 @@ class IpController < ApplicationController
 	end
 
 	def license
+
+	end
+	
+	def successful_upload
+		@user = current_user
 	end
 end
