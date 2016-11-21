@@ -40,6 +40,9 @@
         <li><%= link_to "My IPs", ip_myIps_path(@user) %></li>
         <li><%= link_to "Earnings", user_earnings_path(@user) %></li>
         <li><%= link_to "Upload an IP", ip_upload_ip_path(@user) %></li>
+        <% if @user.flag? %>
+        <li><%= link_to "Pending Approvals", user_pending_path(@user) %></li>
+        <% end %>
     </ul>
   </div>
   </div> 
