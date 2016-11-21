@@ -1,0 +1,41 @@
+<body>
+  <div class='nav'>
+    <ul class="pull-left">
+      <li><%= link_to "About", about_path(@user) %></li>
+    </ul>
+    <ul class="pull-right">
+      <li>  <%= link_to @user.name, user_profile_path(@user) %> <%= link_to('(Log Out)', destroy_user_session_path, :method => :delete) %></li>
+    </ul>
+  </div>
+  
+  <div class='main'>
+  <div class="col-md-10">
+  <h2> Proposal successfully submitted! </h2>
+  </div>
+  </div>
+
+  </div>
+  </div>
+  
+  <div class='side'>
+  <div class="col-md-2">
+    <%= link_to image_tag("iiitbLogo.jpeg", :alt => "iiitbLogo", height: '150', width: '232'), root_path%>
+    <ul>
+        <li><a>
+        <%= link_to "Profile", user_profile_path(@user) %>
+        </a></li>
+        <li><a>
+        <%= link_to "My IPs", ip_myIps_path(@user) %>
+        </a></li>
+        <li><%= link_to "Earnings", user_earnings_path(@user) %></li>
+        <li><%= link_to "Upload an IP", ip_upload_ip_path(@user) %></li>
+    </ul>
+  </div>
+  </div> 
+
+  <div class="footer">
+    <p>For any additional information or enquiry, contact us at <a href="www.gmail.com">iPortal@gmail.com</a>, or call <a href="#">0987654321</a></p>
+  </div>
+ </body>
+<% else %>
+<body>
