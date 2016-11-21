@@ -1,0 +1,3 @@
+class IpCommitteeController < ApplicationController
+
+end
