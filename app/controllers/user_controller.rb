@@ -53,7 +53,7 @@ class UserController < ApplicationController
 	    end
 
 	    def is_admin?
-	    	unless current_user.isAdmin == 1
+	    	unless current_user.flag != 0
 	      	flash[:error] = "Welcome Admin"
 	     	redirect_to admin_path
 	    	end

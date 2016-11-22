@@ -1,5 +1,5 @@
   Rails.application.routes.draw do
-  devise_for :user, :controllers => { registrations: 'registrations' }
+  devise_for :user, :controllers => { registrations: 'registrations'}
   root 'user#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -20,6 +20,7 @@
   get 'admin/about' => 'admin#about'
   get 'admin/earnings' => 'admin#earnings'
   get 'admin/viewall' => 'admin#viewall'
+  get 'user/afteredit' => 'user#afteredit'
   match '/admin/:id' => 'admin#user_destroy', :via => :delete, :as => :admin_user_destroy
   get 'admin/createuser' => 'admin#createuser'
   post 'admin/createuser' => 'admin#create'
