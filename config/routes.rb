@@ -1,5 +1,5 @@
   Rails.application.routes.draw do
-  devise_for :user, :controllers => { registrations: 'registrations' }
+  devise_for :user, :controllers => { registrations: 'registrations'}
   root 'user#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -17,15 +17,21 @@
   get 'ip/upload_ip' => 'uploads#new'
   post 'ip/upload_ip' => 'uploads#create'
   get 'admin' => 'admin#home'
+  get 'admin/about' => 'admin#about'
+  get 'admin/earnings' => 'admin#earnings'
   get 'admin/viewall' => 'admin#viewall'
+  get 'user/afteredit' => 'user#afteredit'
   match '/admin/:id' => 'admin#user_destroy', :via => :delete, :as => :admin_user_destroy
   get 'admin/createuser' => 'admin#createuser'
   post 'admin/createuser' => 'admin#create'
+  get 'admin/profile' => 'admin#profile'
   #get 'admin/createuser' => 'devise/registrations#new'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   patch 'user/editprofile.:id' => 'user#update'
   put 'ip/licensing.:id' => 'contract#new'
+  get 'user/pending' => 'ip_committee#pending'
+  get 'ip_committee/approvals' => 'ip_committee#approvals'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   # Example of named route that can be invoked with purchase_url(id: product.id)

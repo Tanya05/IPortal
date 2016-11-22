@@ -1,7 +1,7 @@
 <body>
   <div class='nav'>
     <ul class="pull-left">
-      <li><%= link_to "About", about_path(@user) %></li>
+      <li><%= link_to "About", admin_about_path(@user) %></li>
     </ul>
     <ul class="pull-right">
       <li>  <%= link_to @user.name, user_profile_path(@user) %> <%= link_to('(Log Out)', destroy_user_session_path, :method => :delete) %></li></li>
@@ -11,7 +11,7 @@
   
   <div class='main'>
   <div class="col-md-10">
-    <%= form_for :contract, url: ip_licensing_path(@user), method: :patch do |f| %>
+    <%= form_for :user, url: user_editprofile_path(@user), method: :patch do |f| %>
 
       <% if @user.errors.any? %>
         <div id="error_explanation">
@@ -20,17 +20,24 @@
             this user from being saved:
           </h2>
           <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
           </ul>
         </div>
       <% end %>
      
     <div class="field">
-        <%= f.label :contract %><br/>
-        <%= f.text_area :type, cols: "60", rows: "10"%>
+        <%= f.label :biodata %><br/>
+        <%= f.text_area :bio, cols: "60", rows: "10"%>
     </div>
 
     <div class="actions">
-      <%= f.submit "Submit"%>
+      <%= f.submit "Update"%>
+    </div>
+
+    <div class="field">
+    <%= link_to 'Change Password', edit_user_registration_path, style: 'color:#191970;' %>
     </div>
     <%end%>
   </div>
@@ -41,16 +48,15 @@
     <%= link_to image_tag("iiitbLogo.jpeg", :alt => "iiitbLogo", height: '150', width: '232'), root_path%>
     <ul>
         <li><a>
-        <%= link_to "Profile", user_profile_path(@user) %>
+         <%= link_to "Profile", admin_profile_path(@user) %>
         </a></li>
         <li><a>
         <%= link_to "My IPs", ip_myIps_path(@user) %>
         </a></li>
         <li><%= link_to "Earnings", user_earnings_path(@user) %></li>
         <li><%= link_to "Upload an IP", ip_upload_ip_path(@user) %></li>
-        <% if @user.flag? %>
-        <li><%= link_to "Pending Approvals", user_pending_path(@user) %></li>
-        <% end %>
+        <li><a><%= link_to "View all users", admin_viewall_path(@user) %></a></li>
+        <li><a><%= link_to "Add User", admin_createuser_path(@user) %></a></li>
     </ul>
   </div>
   </div> 

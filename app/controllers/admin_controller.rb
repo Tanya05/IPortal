@@ -5,10 +5,23 @@ class AdminController < ApplicationController
 		@user = current_user
 	end
 
+  
+  def profile
+    @user = current_user
+  end
+
 	def viewall
 		@user = current_user
 		@users = User.all
 	end
+
+  def about
+    @user = current_user
+  end
+
+  def earnings
+    @user = current_user
+  end
 
 	def user_destroy
 		@user = User.find(params[:id])#parameters selected acc to ID
@@ -25,11 +38,16 @@ class AdminController < ApplicationController
 
     def create
     	@user = User.create(create_params)
+      if create_params[:isIIITB]=="International Institute of Information Technology, Bangalore"
+        @user.isIIITB=1
+      else
+        @user.isIIITB=0
+      end
     	if @user.save
 	    	flash[:notice] = "You created a new user!"
 	    	flash[:color]= "valid"
 	    else
-	    	flash[:notice] = "Form is invalid"
+	    	flash[:notice] = "Form was invalid, either username or email already exists!"
 	    	flash[:color]= "invalid"
 	    end
 	    redirect_to admin_createuser_path
@@ -39,14 +57,14 @@ class AdminController < ApplicationController
 
     private
   	def authorized?
-    	unless current_user.isAdmin?
+    	unless current_user.flag==0
       	flash[:error] = "You are not authorized to view that page."
      	redirect_to root_path
     end
 
     def create_params
     	defaults = { password: "changethis", password_confirmation: "changethis" }
-    	params.require(:user).permit(:name, :email).merge(defaults)
+    	params.require(:user).permit(:name, :email, :isIIITB).merge(defaults)
     end
   end
 end

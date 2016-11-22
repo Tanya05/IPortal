@@ -11,7 +11,7 @@ class UploadsController < ApplicationController
  
 	def create
     	@upload = Ip.new(upload_params)
- 
+      @user = current_user
     	if @upload.save
       		redirect_to ip_upload_ip_path, notice: "The upload #{@upload.title} has been uploaded."
     	else

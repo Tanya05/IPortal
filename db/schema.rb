@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114182357) do
+ActiveRecord::Schema.define(version: 20161121202324) do
 
   create_table "contract_details", force: :cascade do |t|
     t.datetime "created_at",             null: false
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20161114182357) do
     t.text     "description",     limit: 65535
     t.text     "owners",          limit: 65535
     t.text     "Type",            limit: 65535,              null: false
-    t.boolean  "approval_status"
     t.string   "uploads",         limit: 255
+    t.integer  "no_of_approvals", limit: 4,     default: 0
   end
 
   create_table "labs", force: :cascade do |t|
@@ -56,6 +56,13 @@ ActiveRecord::Schema.define(version: 20161114182357) do
     t.integer  "user_id",    limit: 4
   end
 
+  create_table "uploads", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "attachment", limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,   default: "",    null: false
     t.string   "encrypted_password",     limit: 255,   default: "",    null: false
@@ -72,7 +79,8 @@ ActiveRecord::Schema.define(version: 20161114182357) do
     t.text     "bio",                    limit: 65535
     t.string   "name",                   limit: 255
     t.string   "type",                   limit: 255
-    t.boolean  "isAdmin",                              default: false
+    t.integer  "flag",                   limit: 4
+    t.boolean  "isIIITB",                              default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

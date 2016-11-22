@@ -1,5 +1,10 @@
 #overriding the sign up page
 class RegistrationsController < Devise::RegistrationsController
+
+  def update
+    super
+    sign_in(current_user, :bypass => true)
+  end
   
   private #overriding params function
   def sign_up_params
@@ -13,4 +18,5 @@ class RegistrationsController < Devise::RegistrationsController
   def profile_update_params
   	params.require(:user).permit(:name, :bio, :email)
   end
+
 end 
