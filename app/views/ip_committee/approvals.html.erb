@@ -19,13 +19,13 @@
         <th>Type</th>
       </tr>
       <tr>
-        <td><%= @title %></td>
-        <td><%= @desc %></td>
-        <td><%= @kind %></td>
+        <td><%= @data.title %></td>
+        <td><%= @data.description %></td>
+        <td><%= @data.Type%></td>
       </tr>
     </table>
     <div class='button'>
-    <a><%= button_to "Approve This IP" %></a>
+    <a><%= link_to (button_to "Approve This IP", :disable_with => "Approved"), ip_committee_update_path(@data), method: :put %></a>
     </div>
   </div>
   </div>
@@ -56,5 +56,3 @@
     <p>For any additional information or enquiry, contact us at <a href="www.gmail.com">iPortal@gmail.com</a>, or call <a href="#">0987654321</a></p>
   </div>
  </body>
-<% else %>
-<body>
