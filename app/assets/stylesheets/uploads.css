@@ -22,6 +22,7 @@
 	width:1000px;
 	color:#191970;
 	padding-left:10px;
+	overflow-y: auto;
 	}
 
 .main h3
