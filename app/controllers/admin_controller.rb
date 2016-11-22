@@ -23,6 +23,24 @@ class AdminController < ApplicationController
     @user = current_user
   end
 
+  def add_temp_ipc_member
+    @user = User.find(params[:id])
+    @user.update_attribute(:flag,1)
+    redirect_to admin_viewall_path(@user)
+  end
+
+  def add_permanent_ipc_member
+    @user = User.find(params[:id])
+    @user.update_attribute(:flag,2)
+    redirect_to admin_viewall_path(@user)
+  end
+
+  def remove_ipc_member
+    @user = User.find(params[:id])
+    @user.update_attribute(:flag, nil)
+    redirect_to admin_viewall_path(@user)
+  end
+
 	def user_destroy
 		@user = User.find(params[:id])#parameters selected acc to ID
 		@user.destroy#this instance destroyed

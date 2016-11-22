@@ -25,6 +25,9 @@
   get 'admin/createuser' => 'admin#createuser'
   post 'admin/createuser' => 'admin#create'
   get 'admin/profile' => 'admin#profile'
+  put '/admin/aticm/:id' => 'admin#add_temp_ipc_member', :as => :admin_add_temp_ipc_member
+  put '/admin/apicm/:id' => 'admin#add_permanent_ipc_member', :as => :admin_add_permanent_ipc_member
+  put '/admin/rim/:id' => 'admin#remove_ipc_member', :as => :admin_remove_ipc_member
   #get 'admin/createuser' => 'devise/registrations#new'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
