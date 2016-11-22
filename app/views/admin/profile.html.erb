@@ -4,35 +4,31 @@
       <li><%= link_to "About", admin_about_path(@user) %></li>
     </ul>
     <ul class="pull-right">
-      <li> <%= link_to @user.name, user_profile_path(@user) %> <%= link_to('(Log Out)', destroy_user_session_path, :method => :delete) %></li>
-  
+      <li>  <%= link_to @user.name, user_profile_path(@user) %> <%= link_to('(Log Out)', destroy_user_session_path, :method => :delete) %></li>
+    
     </ul>
   </div>
   
   <div class='main'>
   <div class="col-md-10">
-    <h2>iPortal</h2>
-    <h3>Here are all the users</h3>
-    <div>
-  <%= flash[:notice]%>
-  </div>
-    <table style="width:100%">
-      <tr>
-        <th>Name</th>
-        <th>EmailId</th>
-        <th>Option</th>
-      </tr>
-      <tr>
-        <% @users.each do |thisUser| %>
-      <td><%= thisUser.name %></td>
-      <td><%= thisUser.email %></td>
-      <td><%= link_to "Remove User", admin_user_destroy_path(thisUser), method: :delete, data: { confirm: "You sure?" }, style: 'color:#191970;'%></td>
-      <!--function being called, thisUser instance passed to destroy path function-->
-    </tr>
-    <%end%>
-  </table>
-  </div>
-  </div>
+  <h2>iPortal</h2>
+    <div class="field">
+      <strong>Name:</strong>
+      <%= @user.name %>
+    </div>
+
+    <div class="field">
+       <strong>user_mailID:</strong>
+       <%= @user.email %>
+    </div>
+
+    <div class="field">
+       <strong>Biodata:</strong></br>
+       <%= @user.bio %>
+    </div> 
+    </div>
+    </div>
+
   
   <div class='side'>
   <div class="col-md-2">

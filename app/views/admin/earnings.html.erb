@@ -21,7 +21,7 @@
     <%= link_to image_tag("iiitbLogo.jpeg", :alt => "iiitbLogo", height: '150', width: '232'), root_path%>
     <ul>
         <li><a>
-        <%= link_to "Profile", user_profile_path(@user) %>
+         <%= link_to "Profile", admin_profile_path(@user) %>
         </a></li>
         <li><a>
         <%= link_to "My IPs", ip_myIps_path(@user) %>

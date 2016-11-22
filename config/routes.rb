@@ -24,6 +24,7 @@
   match '/admin/:id' => 'admin#user_destroy', :via => :delete, :as => :admin_user_destroy
   get 'admin/createuser' => 'admin#createuser'
   post 'admin/createuser' => 'admin#create'
+  get 'admin/profile' => 'admin#profile'
   #get 'admin/createuser' => 'devise/registrations#new'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

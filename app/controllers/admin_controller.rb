@@ -5,6 +5,11 @@ class AdminController < ApplicationController
 		@user = current_user
 	end
 
+  
+  def profile
+    @user = current_user
+  end
+
 	def viewall
 		@user = current_user
 		@users = User.all
