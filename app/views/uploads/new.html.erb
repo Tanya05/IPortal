@@ -29,7 +29,7 @@
     <div class="field">
   <%= form_for @upload, url: ip_upload_ip_path, html: { multipart: true } do |f| %>
       
-      <br><%= f.label :Title %>:
+      <%= f.label :Title %>:
       <br><%= f.text_field :title %>
 
       <br>

@@ -109,7 +109,7 @@ a:hover
 
 .main table
 	{
-	align: center;
+	table-align: center;
 	padding-top: 50px;
 	border: 1px solid #191970;
 	border-spacing: 5px;

@@ -31,6 +31,7 @@
   patch 'user/editprofile.:id' => 'user#update'
   put 'ip/licensing.:id' => 'contract#new'
   get 'user/pending' => 'ip_committee#pending'
+  get 'ip_committee/approvals' => 'ip_committee#approvals'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   # Example of named route that can be invoked with purchase_url(id: product.id)

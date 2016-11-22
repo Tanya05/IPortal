@@ -21,9 +21,7 @@
 	float:right;
 	width:1000px;
 	color:#191970;
-	padding-top:5px;
 	padding-left:10px;
-	padding-bottom: 10px;
 	}
 
 .main h3
@@ -82,7 +80,8 @@
 	color:#fff;
 	background-color:#A9A9A9;
 	clear:both;
-	margin-bottom:0px; 
+	margin-bottom:0px;
+	bottom:0; 
 	}
 
 .footer a
@@ -105,39 +104,8 @@ a:hover
 	color:black;
 	}
 
-.main table
+.main .field
 	{
-	align: center;
-	padding-top: 50px;
-	border: 1px solid #191970;
-	border-spacing: 5px;
-	}
-
-.main table tr th
-	{
-	font-size: 25px;
-	text-align: center;
-	border: 1px solid #191970;
-	padding: 10px;
-	font-weight: bold;
-	text-decoration: underline;
-	}
-
-.main table tr td
-	{
-	text-align: left;
+	box-sizing:border-box;
 	font-size: 20px;
-	border: 1px solid #191970;
-	padding: 10px;
-	}
-
-.field
-	{
-	font-size: 20px;
-	padding: 30px;
-	}
-
-.br
-	{
-	padding: 30px;
 	}
