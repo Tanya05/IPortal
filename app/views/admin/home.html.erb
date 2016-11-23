@@ -1,3 +1,4 @@
+6
 <body>
   <div class='nav'>
     <ul class="pull-left">
@@ -13,6 +14,18 @@
   <div class="col-md-10">
     <h2>iPortal</h2>
     <h3>Here is a list of all our IPs</h3>
+    <table style="width:100%">
+      <tr>
+        <th>Title</th>
+        <th>Description</th> 
+      </tr>
+      <% @data.each do |data| %>
+        <tr>
+          <td><a><%= link_to data.title, ip_info_path(:title => data.title, :desc => data.description, :kind => data.Type, :attachment_url => data.uploads_url) %></a></td>
+          <td><%= data.description %></td>
+        </tr>
+        <%end%>
+  </table>
   </div>
   </div>
   

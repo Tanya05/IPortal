@@ -3,6 +3,7 @@ class AdminController < ApplicationController
 
 	def home
 		@user = current_user
+    @data = Ip.all
 	end
 
   
