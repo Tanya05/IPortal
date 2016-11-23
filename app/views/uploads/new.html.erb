@@ -27,7 +27,7 @@
 <% end %>
 
     <div class="field">
-  <%= form_for @upload, url: ip_upload_ip_path, html: { multipart: true } do |f| %>
+  <%= form_for @upload, :id => 'form_id', url: ip_upload_ip_path, html: { multipart: true } do |f| %>
       
       <%= f.label :Title %>:
       <br><%= f.text_field :title %>
@@ -46,9 +46,7 @@
 
       <br><%= f.label :Attachment %>:
       <br><%= f.file_field :uploads %>
-
-      <br>
-      <br><%= f.submit "Save", class: "btn btn-primary" %>
+      <br><a><%= button_to 'Save', ip_upload_ip_path, :onclick => "$('form_id').submit()" %></a>
   <% end %>
 </div>
 

@@ -27,15 +27,19 @@
 <% end %>
 
     <div class="field">
+    <% flash.each do |key, value| %>
+    <div class="alert"><%= value %></div>
+    <% end %>
   <%= form_for @stake, :id => 'form_id2', url: ip_new_stakeholder_path, html: { multipart: true } do |f| %>
        <br><%= f.label :stakeholders %> 
-           <%= f.label :and %>
-           <%= f.label :their %>
-           <%= f.label :percentages %>
-           <br>
        <br><%= f.text_field :name %>
-           <%= f.text_field :percentage %>
-           <%= f.submit "Add" %>
+       <br><%= f.label :percentages %>
+       <br><%= f.text_field :percentage %>
+       <br>    
+       <br><%= f.label :Owner %>
+       <%= f.check_box :isOwner, :checked => false %>
+       <br>
+       <br><%= f.submit "Add" %>
     <% end %>
 </div>
 
