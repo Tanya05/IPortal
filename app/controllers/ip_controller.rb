@@ -14,6 +14,8 @@ class IpController < ApplicationController
 		@title = params[:title]
 		@desc = params[:desc]
 		@kind = params[:kind]
+		@attachment_url = params[:attachment_url]
+
 	end
 
 	def update

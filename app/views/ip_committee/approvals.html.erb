@@ -17,11 +17,13 @@
         <th>Title</th>
         <th>Description</th> 
         <th>Type</th>
+        <th>Download</th>
       </tr>
       <tr>
         <td><%= @data.title %></td>
         <td><%= @data.description %></td>
         <td><%= @data.Type%></td>
+        <td><%= link_to "Download IP", @data.uploads_url %></td>
       </tr>
     </table>
     <div class='button'>
