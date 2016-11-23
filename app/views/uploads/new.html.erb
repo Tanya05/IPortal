@@ -69,6 +69,10 @@
         <% if @user.flag? %>
         <li><%= link_to "Pending Approvals", user_pending_path(@user) %></li>
         <% end %>
+        <% if @user.flag==0 %>
+          <li><a><%= link_to "View all users", admin_viewall_path(@user) %></a></li>
+          <li><a><%= link_to "Add User", admin_createuser_path(@user) %></a></li>
+        <% end %>
     </ul>
   </div>
   </div> 

@@ -2,9 +2,9 @@ class AdminController < ApplicationController
 	before_filter :authorized?
 
 	def home
-		@user = current_user
+    @user = current_user
     @data = Ip.all
-	end
+  end
 
   
   def profile
