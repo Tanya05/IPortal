@@ -25,13 +25,13 @@ class AdminController < ApplicationController
 
   def add_temp_ipc_member
     @user = User.find(params[:id])
-    @user.update_attribute(:flag,1)
+    @user.update_attribute(:flag,2)
     redirect_to admin_viewall_path(@user)
   end
 
   def add_permanent_ipc_member
     @user = User.find(params[:id])
-    @user.update_attribute(:flag,2)
+    @user.update_attribute(:flag,1)
     redirect_to admin_viewall_path(@user)
   end
 

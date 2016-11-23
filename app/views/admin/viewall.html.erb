@@ -33,7 +33,7 @@
         <% if thisUser.flag != 1 and thisUser.flag !=2 %>
           <%= link_to "Add IPC Member", admin_add_temp_ipc_member_path(thisUser), method: :put, data: { confirm: "You sure?" }, style: 'color:#191970;'%>
         <% elsif thisUser.flag==1 or thisUser.flag==2 %>
-          <% if thisUser.flag == 1%>
+          <% if thisUser.flag == 2%>
             <%= link_to "Make PIPC Member", admin_add_permanent_ipc_member_path(thisUser), method: :put, data: { confirm: "You sure?" }, style: 'color:#191970;'%>
             <%= link_to "Remove IPC Member", admin_remove_ipc_member_path(thisUser), method: :put, data: { confirm: "You sure?" }, style: 'color:#191970;'%>
           <%else%>
