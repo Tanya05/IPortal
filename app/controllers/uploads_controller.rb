@@ -13,7 +13,7 @@ class UploadsController < ApplicationController
     	@upload = Ip.new(upload_params)
       @user = current_user
     	if @upload.save
-      		redirect_to new_stakeholder_path(@upload.title), notice: "Add the stakeholders of your ip."
+      		redirect_to stakeholder_new_path(@upload), notice: "Add the stakeholders of your ip."
     	else
       		render "new"
     	end

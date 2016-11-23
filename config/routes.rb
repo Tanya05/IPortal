@@ -16,10 +16,12 @@
   get 'user/earnings' => 'user#earnings'
   get 'ip/upload_ip' => 'uploads#new'
   post 'ip/upload_ip' => 'uploads#create'
-  get 'ip/new_stakeholder' => 'stakeholder#new'
-  post 'ip/new_stakeholder' => 'stakeholder#create'
-  put 'ip/new_stakeholder/:title' => 'stakeholder#create', :as => :stakeholder_create
+
+  get 'ip/new_stakeholder/:id' => 'stakeholder#new', :as => :stakeholder_new
+  post 'ip/new_stakeholder/:id' => 'stakeholder#create', :as => :stakeholder_create
+  #put 'ip/new_stakeholder/:id' => 'stakeholder#create', :as => :stakeholder_create
   post '/stakeholder/:id' => 'stakeholder#show'
+ 
   get 'admin' => 'admin#home'
   get 'admin/about' => 'admin#about'
   get 'admin/earnings' => 'admin#earnings'

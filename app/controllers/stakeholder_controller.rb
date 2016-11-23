@@ -7,24 +7,25 @@ class StakeholderController < ApplicationController
 	def new
 		@stake = Stakeholder.new
 		@user = current_user
+		@current_ip = Ip.find(params[:id])
 	end
 
 	def create
 		@user = current_user
 		@title = params[:title]
-		@current_ip = Ip.where("title = ?", @title).select(:id).take
+		@current_ip = Ip.find(params[:id])
 		@stake = Stakeholder.new(stake_params)
 		@usr = User.where("name = ?", @stake[:name]).select(:id).take
 		if @usr.blank?
 			flash[:error] = "Invalid stakeholder"
-			redirect_to ip_new_stakeholder_path and return
+			redirect_to stakeholder_new_path and return
 		else
 			@stake.update_attribute(:user_id,@usr[:id])
-			@stake.update_attribute(:ip_id,'11')
+			@stake.update_attribute(:ip_id, @current_ip.id)
 		end
 		
 		if @stake.save
-      		redirect_to ip_new_stakeholder_path
+      		redirect_to stakeholder_new_path
     	else
       		render "new"
     	end
