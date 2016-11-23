@@ -1,7 +1,7 @@
 class IpController < ApplicationController
 	def my_ips
 		@user = current_user
-		@id = user[id]
+		@id = @user[:id]
 		@data = Ip.all
 	end
 
