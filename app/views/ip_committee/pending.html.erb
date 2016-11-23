@@ -16,12 +16,20 @@
       <tr>
         <th>Title</th>
         <th>Description</th> 
+        <th>Approval Status</th>
       </tr>
       <% @data.each do |data| %>
+      <% if data.approval_status != 0 %>
         <tr>
           <td><a><%= link_to data.title, ip_committee_approvals_path(data), method: :put %></a></td>
           <td><%= data.description %></td>
+          <% if data.approval_status? %>
+          <td>Approved</td>
+          <% else %>
+          <td>Not Yet Approved</td>
+          <% end %>
         </tr>
+        <% end %>
         <%end%>
   </table>
   </div>

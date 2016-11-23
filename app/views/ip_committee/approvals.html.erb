@@ -26,9 +26,15 @@
         <td><%= link_to "Download IP", @data.uploads_url %></td>
       </tr>
     </table>
-    <div class='button'>
+    <div class='button', align = "center">
+    <% if @data.approval_status? %>
+    <a><%= link_to (button_to "Disapprove This IP", :disable_with => "Disapproved"), ip_committee_disapprove_path(@data), method: :put %></a>
+    <br>
+    <% else %>
     <a><%= link_to (button_to "Approve This IP", :disable_with => "Approved"), ip_committee_update_path(@data), method: :put %></a>
+    <% end %>
     </div>
+
   </div>
   </div>
 

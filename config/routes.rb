@@ -42,6 +42,7 @@
   get 'user/pending' => 'ip_committee#pending'
   put 'ip_committee/approvals/:id' => 'ip_committee#approvals', :as => :ip_committee_approvals
   put 'ip_committee/approve_this_ip/:id' => 'ip_committee#update', :as => :ip_committee_update
+  put 'ip_committee/disapprove_this_ip/:id' => 'ip_committee#disapprove', :as => :ip_committee_disapprove
   get 'ip_committee/approvals/:id' => 'ip_committee#approvals'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
