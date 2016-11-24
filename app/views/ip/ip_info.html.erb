@@ -20,14 +20,14 @@
         <th>Download</th>
       </tr>
       <tr>
-        <td><%= @title %></td>
-        <td><%= @desc %></td>
-        <td><%= @kind %></td>
-        <td><%= link_to "Download IP", @attachment_url %></td>
+        <td><%= @data.title %></td>
+        <td><%= @data.description %></td>
+        <td><%= @data.Type %></td>
+        <td><%= link_to "Download IP", @data.uploads_url %></td>
       </tr>
     </table>
     <div class='button'>
-    <a><%= button_to "License This IP", new_contract_path(@user), :method =>"get" %></a>
+    <a><%= button_to "License This IP", new_contract_path(@data), method: :put %></a>
     </div>
   </div>
   </div>

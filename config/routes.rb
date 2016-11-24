@@ -7,11 +7,15 @@
   get 'user/profile' => 'user#profile'
 
   get 'ip/myIps' => 'ip#my_ips'
-  get 'ip/info' => 'ip#ip_info'
+  put 'ip/info/:id' => 'ip#ip_info', :as => :ip_info
   post 'ip/show' => 'ip#show'
+
   get 'ip/licensing' => 'ip#license'
-  get 'contract/create' => 'contract#new'
-  post 'contract/create' => 'contract#create'
+  put 'contract/new/:id' => 'contract#new', :as => :new_contract
+  put 'contract/new/:id' => 'contract#create', :as => :contract_create
+  post 'contract/new/:id' => 'contract#create'
+  get 'contract/new/:id' => 'contract#new'
+
   get 'about' => 'user#about'
   get 'user/earnings' => 'user#earnings'
   get 'ip/upload_ip' => 'uploads#new'

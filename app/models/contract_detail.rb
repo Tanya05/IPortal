@@ -1,4 +1,4 @@
 class ContractDetail < ActiveRecord::Base
-	has_one :contract
+	belongs_to :contract
 	has_many :users
 end
