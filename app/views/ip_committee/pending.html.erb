@@ -20,6 +20,7 @@
       </tr>
       <% @data.each do |data| %>
       <% if data.approval_status != 0 %>
+      <% if is_pending(data)!=0 %>
         <tr>
           <td><a><%= link_to data.title, ip_committee_approvals_path(data), method: :put %></a></td>
           <td><%= data.description %></td>
@@ -29,6 +30,7 @@
           <td>Not Yet Approved</td>
           <% end %>
         </tr>
+        <% end %>
         <% end %>
         <%end%>
   </table>
