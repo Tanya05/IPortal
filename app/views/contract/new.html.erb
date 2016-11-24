@@ -10,9 +10,13 @@
   
   <div class='main'>
   <div class="col-md-10">
-    <%= form_for :contract, url: contract_create_path() do |f| %>
-      <%= f.text_field :type %>
-      <%= f.submit "Submit proposal" %>
+      <h2>iPortal</h2>
+    <%= form_for @contract, url: contract_create_path() do |f| %>
+      <br><%= f.label :Type %>
+      <br><%= f.text_field :Type %> <br>
+      <br><%= f.label :Royalty %>
+      <br><%= f.text_field :royalty %> <br>
+      <br><%= f.submit 'Submit proposal' %>
     <% end %>
   </div>
   </div>

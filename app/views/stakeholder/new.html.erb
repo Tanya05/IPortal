@@ -27,7 +27,7 @@
 <% end %>
 
     <div class="field">
-    <% flash.each do |key, value| %>
+    <% @flash.each do |key, value| %>
     <div class="alert"><%= value %></div>
     <% end %>
   <%= form_for @stake, :id => 'form_id2', url: stakeholder_create_path(@current_ip), html: { multipart: true } do |f| %>

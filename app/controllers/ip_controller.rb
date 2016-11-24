@@ -2,6 +2,8 @@ class IpController < ApplicationController
 	def my_ips
 		@user = current_user
 		@id = @user[:id]
+		@usr = User.find(@id)
+		@st = @usr.stakeholders.uniq
 		@data = Ip.all
 	end
 
@@ -11,11 +13,7 @@ class IpController < ApplicationController
 
 	def ip_info
 		@user = current_user
-		@title = params[:title]
-		@desc = params[:desc]
-		@kind = params[:kind]
-		@attachment_url = params[:attachment_url]
-
+		@data = Ip.find(params[:id])
 	end
 
 	def update
