@@ -33,6 +33,7 @@
     <%end%>
     <% if @data.approval_status==nil %>
     <a><%= link_to (button_to "Approve This IP", :disable_with => "Approved"), ip_committee_update_path(@data), method: :put %></a>
+     <a><%= link_to (button_to "Disapprove This IP", :disable_with => "Disapproved"), ip_committee_disapprove_path(@data), method: :put %></a>
     <% end %>
     </div>
 

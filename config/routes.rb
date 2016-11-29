@@ -54,6 +54,7 @@
   put 'ip_committee/disapprove_this_ip/:id' => 'ip_committee#disapprove', :as => :ip_committee_disapprove
   get 'ip_committee/approvals/:id' => 'ip_committee#approvals'
   put 'ip/new_stakeholder/assignipcm/:id'=> 'ip_committee#upload_ipcm_check', :as => :ip_committee_upload_ipcm_check
+  get 'ip/search' => 'ip#search'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   # Example of named route that can be invoked with purchase_url(id: product.id)

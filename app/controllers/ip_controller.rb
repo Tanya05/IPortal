@@ -32,4 +32,10 @@ class IpController < ApplicationController
 	def successful_upload
 		@user = current_user
 	end
+
+	def search
+	  @data = Ip.search(params[:search])
+	  redirect to '/'
+	end
+
 end

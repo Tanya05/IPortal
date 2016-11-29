@@ -9,4 +9,16 @@ class Ip < ActiveRecord::Base
  	validates :Type, presence: true 
  	validates :uploads, presence: true 
  	TYPES = ['Research', 'Project', 'Classroom']
+
+
+
+def self.search(search)
+  if search
+    find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+end
+
+
 end

@@ -47,7 +47,7 @@ class IpCommitteeController < ApplicationController
 		@user = current_user
 		@data = Ip.find(params[:id])
 		@data.update_attribute(:approval_status, 0)
-		redirect_to ip_committee_approvals_path(@data)
+		redirect_to user_pending_path(@data)
 	end
 
 	def upload_ipcm_check
