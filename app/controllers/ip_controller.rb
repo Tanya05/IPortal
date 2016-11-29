@@ -33,9 +33,4 @@ class IpController < ApplicationController
 		@user = current_user
 	end
 
-	def search
-	  @data = Ip.search(params[:search])
-	  redirect to '/'
-	end
-
 end

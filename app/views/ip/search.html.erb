@@ -11,7 +11,17 @@
   <div class='main'>
   <div class="col-md-10">
     <h2>iPortal</h2>
-    <h3>Here is a list of all our IPs:</h3>
+
+    <!--<% form_tag ip_search_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>-->
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :title => nil %>
+
+    <h3>Here is what search returned:</h3>
 
     <table style="width:100%">
       <tr>
