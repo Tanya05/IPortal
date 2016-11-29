@@ -17,7 +17,7 @@ class StakeholderController < ApplicationController
 		@stake = Stakeholder.new(stake_params)
 		@usr = User.where("name = ?", @stake[:name]).select(:id).take
 		if @usr.blank?
-			flash.now[:error] = "Invalid stakeholder"
+			flash[:error] = "Invalid stakeholder"
 			redirect_to stakeholder_new_path and return
 		else
 			@stake.update_attribute(:user_id,@usr[:id])

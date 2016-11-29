@@ -21,7 +21,7 @@
       <% @data.each do |data| %>
       <% if data.approval_status != 0 %>
         <tr>
-          <td><a><%= link_to data.title, ip_info_path(:title => data.title, :desc => data.description, :kind => data.Type, :attachment_url => data.uploads_url) %></a></td>
+          <td><a><%= link_to data.title, ip_info_path(:title => data.title, :desc => data.description, :kind => data.Type, :id => data.id) %></a></td>
           <td><%= data.description %></td>
         </tr>
         <% end %>
@@ -45,6 +45,7 @@
         <li><%= link_to "Upload an IP", ip_upload_ip_path(@user) %></li>
         <li><a><%= link_to "View all users", admin_viewall_path(@user) %></a></li>
         <li><a><%= link_to "Add User", admin_createuser_path(@user) %></a></li>
+        <li><a><%= link_to "Conflicted Ips", admin_conflict_ip_path(@user) %></a></li>
     </ul>
   </div>
   </div> 

@@ -1,49 +1,33 @@
-<%= stylesheet_link_tag "uploads.css" %>
-
 <body>
-
   <div class='nav'>
     <ul class="pull-left">
       <li><%= link_to "About", about_path(@user) %></li>
     </ul>
     <ul class="pull-right">
       <li>  <%= link_to @user.name, user_profile_path(@user) %> <%= link_to('(Log Out)', destroy_user_session_path, :method => :delete) %></li>
-    
     </ul>
   </div>
   
   <div class='main'>
   <div class="col-md-10">
     <h2>iPortal</h2>
-
-  <% if !@stake.errors.empty? %>
-  <div class="alert alert-error">
-    <ul>
-      <% @stake.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+    <h3>Here is a list of all your IPs:</h3>
+    <table style="width:100%">
+      <tr>
+        <th>Title</th>
+        <th>Description</th> 
+      </tr>
+      <%= @ip.each do |ip| %>
+        <% if ip.approval_status > 20%>
+        <tr>
+        <td><%= link_to ip.title, admin_add_temp_members_page_path(ip) %></td>
+        <td><%= ip.description %></td>
+        </tr>
+        <%end%>
       <% end %>
-    </ul>
+  </table>
   </div>
-<% end %>
-
-    <div class="field">
-    <div>
-       <%= flash[:error]%>
-    </div>
-    <%= form_for @stake, :id => 'form_id2', url: stakeholder_create_path(@current_ip), html: { multipart: true } do |f| %>
-       <br><%= f.label :stakeholders %> 
-       <br><%= f.text_field :name %>
-       <br><%= f.label :percentages %>
-       <br><%= f.text_field :percentage %>
-       <br>    
-       <br><%= f.label :Owner %>
-       <%= f.check_box :isOwner, :checked => false %>
-       <br>
-       <br><%= f.submit "Add" %>
-       <br>
-    <% end %>
-       <br><%=link_to button_to("Done adding"), ip_committee_upload_ipcm_check_path(@current_ip), method: :put %>
-</div>
+  </div>
 
   </div>
   </div>
@@ -58,16 +42,14 @@
         <li><a>
         <%= link_to "My IPs", ip_myIps_path(@user) %>
         </a></li>
-        <!--<li><a href="#">My IPs</a></li>-->
         <li><%= link_to "Earnings", user_earnings_path(@user) %></li>
         <li><%= link_to "Upload an IP", ip_upload_ip_path(@user) %></li>
+        <li><a><%= link_to "View all users", admin_viewall_path(@user) %></a></li>
+        <li><a><%= link_to "Add User", admin_createuser_path(@user) %></a></li>
         <% if @user.flag? %>
         <li><%= link_to "Pending Approvals", user_pending_path(@user) %></li>
         <% end %>
-        <% if @user.flag==0 %>
-          <li><a><%= link_to "View all users", admin_viewall_path(@user) %></a></li>
-          <li><a><%= link_to "Add User", admin_createuser_path(@user) %></a></li>
-        <% end %>
+        <li><a><%= link_to "Conflicted Ips", admin_conflict_ip_path(@user) %></a></li>
     </ul>
   </div>
   </div> 

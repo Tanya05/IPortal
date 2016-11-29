@@ -31,6 +31,7 @@
   get 'admin/earnings' => 'admin#earnings'
   get 'admin/viewall' => 'admin#viewall'
   get 'user/afteredit' => 'user#afteredit'
+  get 'admin/conflict_ip'=> 'admin#conflict_ip'
   match '/admin/:id' => 'admin#user_destroy', :via => :delete, :as => :admin_user_destroy
   get 'admin/createuser' => 'admin#createuser'
   post 'admin/createuser' => 'admin#create'
@@ -38,6 +39,8 @@
   put '/admin/aticm/:id' => 'admin#add_temp_ipc_member', :as => :admin_add_temp_ipc_member
   put '/admin/apicm/:id' => 'admin#add_permanent_ipc_member', :as => :admin_add_permanent_ipc_member
   put '/admin/rim/:id' => 'admin#remove_ipc_member', :as => :admin_remove_ipc_member
+  get 'admin/addconflict_mem/:id' => 'admin#add_temp_members_page', :as => :admin_add_temp_members_page
+  put '/admin/temp_conflict_members/:id' => 'admin#add_temp_conflict_ip_members', :as => :admin_add_temp_conflict_ip_members
   #get 'admin/createuser' => 'devise/registrations#new'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

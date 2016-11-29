@@ -4,54 +4,37 @@
       <li><%= link_to "About", admin_about_path(@user) %></li>
     </ul>
     <ul class="pull-right">
-      <li>  <%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
-    
+      <li> <%= link_to @user.name, user_profile_path(@user) %> <%= link_to('(Log Out)', destroy_user_session_path, :method => :delete) %></li>
+  
     </ul>
   </div>
   
   <div class='main'>
   <div class="col-md-10">
-         <h2>Sign up</h2>
-<%= form_for(:user, url: admin_createuser_path()) do |f| %>
-
-<div class="field">
-    <%= f.label :name %><br/>
-    <%= f.text_field :name%>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Institute %><br />
-    <%= f.select :isIIITB, options_for_select(["International Institute of Information Technology, Bangalore", "Other"]) %><br/>
-  </div>
-  </br>
-
-  <!--<div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>-->
-
-
-
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-  <div>
+    <h2>iPortal</h2>
+    <h3>Add temporary members for: <%= @ip.title %></h3>
+    <div>
   <%= flash[:notice]%>
   </div>
-<% end %>
-
+    <table style="width:100%">
+      <tr>
+        <th>Name</th>
+        <th>EmailId</th>
+        <th>Option</th>
+      </tr>
+      <tr>
+      <% @users.each do |thisUser| %>
+        <% if thisUser.flag != 1 and thisUser.flag !=2 %>
+          <td><%= thisUser.name %></td>
+          <td><%= thisUser.email %></td>
+          <td>    
+              <%= link_to "Add temp IPC Member", admin_add_temp_conflict_ip_members_path(:user_id => thisUser.id, :ipid => @ip.id), method: :put, data: { confirm: "You sure?" }, style: 'color:#191970;'%>
+          </td>
+        <%end%>
+      <!--function being called, thisUser instance passed to destroy path function-->
+      </tr>
+    <%end%>
+  </table>
   </div>
   </div>
   
@@ -81,8 +64,3 @@
  </body>
 <% else %>
 <body>
-
-
-
-
-
