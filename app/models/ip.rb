@@ -8,6 +8,7 @@ class Ip < ActiveRecord::Base
  	validates :description, presence: true 
  	validates :Type, presence: true 
  	validates :uploads, presence: true 
+ 	validates :iiitbStake, :numericality => { :greater_than_or_equal_to => 20.0 }
  	TYPES = ['Research', 'Project', 'Classroom']
 
 
