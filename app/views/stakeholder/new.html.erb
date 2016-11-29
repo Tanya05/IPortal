@@ -31,6 +31,10 @@
        <%= flash[:error]%>
     </div>
     <%= form_for @stake, :id => 'form_id2', url: stakeholder_create_path(@current_ip), html: { multipart: true } do |f| %>
+  <div>
+    <%= flash[:notice]%>
+  </div>
+  <%= form_for @stake, :id => 'form_id2', url: stakeholder_create_path(@current_ip), html: { multipart: true } do |f| %>
        <br><%= f.label :stakeholders %> 
        <br><%= f.text_field :name %>
        <br><%= f.label :percentages %>
@@ -43,6 +47,8 @@
        <br>
     <% end %>
        <br><%=link_to button_to("Done adding"), ip_committee_upload_ipcm_check_path(@current_ip), method: :put %>
+       <br><%=link_to button_to("Done adding"), root_path %>
+       <% end %>
 </div>
 
   </div>

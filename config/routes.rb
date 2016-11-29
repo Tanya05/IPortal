@@ -25,7 +25,8 @@
   #put 'ip/new_stakeholder/:id' => 'stakeholder#create', :as => :stakeholder_create
   post '/stakeholder/:id' => 'stakeholder#show'
 
-
+  post 'ip/new_stakeholder' => 'stakeholder#create'
+ 
   get 'admin' => 'admin#home'
   get 'admin/about' => 'admin#about'
   get 'admin/earnings' => 'admin#earnings'
